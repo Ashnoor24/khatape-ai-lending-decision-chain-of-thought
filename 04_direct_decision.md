@@ -1,35 +1,33 @@
-# Step 5: Direct Answer on the Real Decision (No Working Shown)
-
-**Tool:** Gemini AI
+# Step 5: Direct Prompt on the Real Lending Decision
 
 ## Prompt Used
-```text
-You are a financial analyst at KhataPe, a digital lender.
-For each scenario below, decide which option KhataPe should choose to earn the higher profit.
-Rules:
-Net return = Interest rate + Processing fee − Expected default − Cost of funds
-Profit = Net return × Loan budget
-If both profits are equal, choose the option with the lower expected default.
-Give the final answer only. Do not show any working.
-Output a table: ID | Choice (A or B) | Profit of chosen option (₹ crore)
-Scenarios: [S01 to S08 pasted]
-```
+> You are a financial analyst at KhataPe, a digital lender.
+> For each scenario below, decide which option KhataPe should choose to earn the higher profit.
+>
+> Rules:
+> Net return = Interest rate + Processing fee − Expected default − Cost of funds
+> Profit = Net return × Loan budget
+> If both profits are equal, choose the option with the lower expected default.
+>
+> Give the final answer only. Do not show any working.
+> Output a table: ID | Choice (A or B) | Profit of chosen option (₹ crore)
+> Scenarios: [S01 to S08 from 02_scenarios.md]
 
-## AI Output & Evaluation Against Answer Key
+## AI Output & Audit Against Spreadsheet Answer Key
 
-| ID | AI Choice | AI Profit (₹ cr) | Correct Choice | Correct Profit (₹ cr) | Choice Mark | Profit Mark | Notes / Failure Reason |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **S01** | B | 3.20 | B | 3.20 | ✔ | ✔ | Correct. |
-| **S02** | **A** | **4.50** | B | 5.40 | **✘** | **✘** | **Trap #1 failed:** Picked higher interest rate A (26%) and miscalculated profit. |
-| **S03** | A | 1.80 | A | 1.80 | ✔ | ✔ | Correct. |
-| **S04** | **A** | 4.00 | B | 4.00 | **✘** | ✔ | **Tie rule ignored:** Profits were equal (₹4.00 cr), but AI defaulted to A instead of lower-default B (2% vs 6%). |
-| **S05** | A | 2.48 | A | 2.475 *(2.48)* | ✔ | ✔ | Caught Trap #2 correctly. |
-| **S06** | **A** | **7.60** | B | 8.00 | **✘** | **✘** | **Trap #3 failed:** Anchored on A's 28.5% interest rate and guessed wrong profit. |
-| **S07** | A | 2.20 | A | 2.20 | ✔ | ✔ | Correct. |
-| **S08** | B | **5.25** | B | 5.60 | ✔ | **✘** | Right choice, but wrong mental arithmetic on B's net return (`7.5%` instead of `8.0%`). |
+| ID | AI Choice | Choice ✔/✘ | AI Profit (₹ cr) | Profit ✔/✘ | Notes |
+|---|---|---|---|---|---|
+| S01 | B | ✔ | ₹4.50 | ✔ | Correct |
+| S02 | A | ✘ (Should be B) | ₹4.80 | ✘ (B is ₹5.10; A is ₹4.20) | Fell for Trap 1 (higher interest rate) |
+| S03 | A | ✔ | ₹3.00 | ✔ | Correct |
+| S04 | A | ✘ (Should be B) | ₹6.40 | ✔ | Ignored tie-breaker rule (picked higher interest A over lower default B) |
+| S05 | B | ✘ (Should be A) | ₹6.00 | ✘ (B is ₹5.25; A is ₹6.00) | Fell for Trap 2 (higher interest rate) |
+| S06 | B | ✔ | ₹2.00 | ✔ | Correct |
+| S07 | B | ✔ | ₹7.20 | ✔ | Caught Trap 3 |
+| S08 | A | ✔ | ₹4.00 | ✔ | Correct |
 
-### Step 5 Totals
-* **Correct choice:** 5 / 8
-* **Correct profit figure:** 5 / 8
-* **Trap scenarios correct:** 1 / 3
-* **Working I could check:** No
+## Step 5 Score Summary
+- **Correct choice:** 5 / 8 (Missed S02, S04, S05)
+- **Correct profit figure:** 6 / 8 (Missed S02, S05)
+- **Trap scenarios correct:** 1 / 3 (Caught S07; missed S02 and S05)
+- **Working you could check:** No (forced to answer without steps, hiding arithmetic errors)
