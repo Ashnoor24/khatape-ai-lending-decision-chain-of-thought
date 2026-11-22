@@ -17,13 +17,13 @@
 
 ### Dataset Audit Note (Checked Before Running Decision Prompts)
 * **3 Trap Scenarios Included:** **S02** (A has 26% vs 19% interest, but earns ₹3.90 cr vs B's ₹5.40 cr), **S05** (B has 27.5% vs 15% interest, but earns ₹2.25 cr vs A's ₹2.475 cr), and **S06** (A has 28.5% vs 22% interest, but earns ₹6.80 cr vs B's ₹8.00 cr).
-* **1 Tie Scenario Included:** **S04** (both Option A and Option B yield 8.0% net return = `₹4.00 crore` profit; tie rule selects Option B due to lower expected default of 2.0% vs 6.0%).
+* **1 Tie Scenario Included:** **S04** (both Option A and Option B yield 8.0% net return = ₹4.00 crore profit; tie rule selects Option B due to lower expected default of 2.0% vs 6.0%).
 
 ---
 
 ## Step 3: Spreadsheet Answer Key (Calculated Before Testing AI)
 
-*Spreadsheet formula used:* `Net Return = Interest + Fee - Default - Cost_of_Funds` | `Profit = (Net_Return / 100) * Budget`
+*Spreadsheet formula used:* Net Return = Interest + Fee - Default - Cost_of_Funds | Profit = (Net_Return / 100) * Budget
 
 | ID | A net return % | A profit (₹ cr) | B net return % | B profit (₹ cr) | Correct choice | Scenario Type |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
