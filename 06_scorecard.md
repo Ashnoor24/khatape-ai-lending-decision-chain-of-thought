@@ -6,7 +6,7 @@
 
 | Scenario | Step | AI Result (Step 6) | Spreadsheet Result | Correct? |
 | :--- | :--- | :--- | :--- | :---: |
-| **S02** | Step 1 | Option A net return = 6.5% (`26 + 2 − 11.5 − 10`) | 6.5% | **✔** |
+| **S02** | Step 1 | Option A net return = 6.5% (26 + 2 − 11.5 − 10) | 6.5% | **✔** |
 | **S02** | Step 2 | Option A profit = ₹3.90 crore (6.5% × 60) | ₹3.90 crore | **✔** |
 | **S02** | Step 3 | Option B net return = 9.0%, profit = ₹5.40 crore | 9.0%, ₹5.40 crore | **✔** |
 | **S02** | Steps 4–5 | ₹5.40 cr > ₹3.90 cr → Choose **B** | Choose **B** | **✔** |
