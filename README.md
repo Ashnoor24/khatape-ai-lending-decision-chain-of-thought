@@ -33,7 +33,7 @@ Profit = Net return × Loan budget
 ## Key learnings
 1. **A direct answer is enough for one-step questions:** Comparing interest rates across all 8 scenarios scored 8/8 without needing step-by-step instructions.
 2. **Step-by-step reasoning helps multi-step decisions:** Chain-of-thought fixed S02, S04, and S06—catching both high-default traps and applying the tie-breaker rule.
-3. **Convincing is not the same as correct:** In S08, Gemini AI wrote neat, confident steps but miscalculated `20.5 + 1.5 − 4 − 10` as `7.5%` instead of `8.0%` (`₹5.25 cr` vs `₹5.60 cr`).
+3. **Convincing is not the same as correct:** In S08, Gemini AI wrote neat, confident steps but miscalculated 20.5 + 1.5 − 4 − 10 as 7.5% instead of 8.0% (₹5.25 cr vs ₹5.60 cr).
 4. **What the numbers do not show:** Recovery/collection costs for defaulted loans and RBI digital lending compliance rules.
 
 ## My recommendation to KhataPe
